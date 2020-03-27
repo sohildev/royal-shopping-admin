@@ -16688,12 +16688,14 @@ a.text-purple:hover {
 }
 
 .preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    top: 0;
-    position: fixed;
-    z-index: 99999;
-    background: #fff
+    background-color: #fff;
+    opacity: 0.7;
+    z-index: 1000;
 }
 
 .lds-ripple {

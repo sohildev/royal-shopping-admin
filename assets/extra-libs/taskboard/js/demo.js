@@ -1,7 +1,7 @@
 /**
  * Created by Zura on 4/5/2016.
  */
-$(function () {
+$(function() {
     Lobibox.notify.DEFAULTS = $.extend({}, Lobibox.notify.DEFAULTS, {
         size: 'mini',
         // delay: false,
@@ -10,13 +10,11 @@ $(function () {
 
     //Basic example
     $('#todo-lists-basic-demo').lobiList({
-        lists: [
-            {
+        lists: [{
                 id: 'todo',
                 title: 'TODO',
                 defaultStyle: 'lobilist-info',
-                items: [
-                    {
+                items: [{
                         title: 'Floor cool cinders',
                         description: 'Thunder fulfilled travellers folly, wading, lake.',
                         dueDate: '2015-01-31'
@@ -39,8 +37,7 @@ $(function () {
             },
             {
                 title: 'DOING',
-                items: [
-                    {
+                items: [{
                         title: 'Composed trays',
                         description: 'Hoary rattle exulting suspendisse elit paradises craft wistful. Bayonets allures prefer traits wrongs flushed. Tent wily matched bold polite slab coinage celerities gales beams.'
                     },
@@ -59,257 +56,236 @@ $(function () {
     });
     //Custom datepicker
     $('#todo-lists-demo-datepicker').lobiList({
-        lists: [
-            {
-                title: 'TODO',
-                defaultStyle: 'lobilist-info',
-                items: [
-                    {
-                        title: 'Floor cool cinders',
-                        description: 'Thunder fulfilled travellers folly, wading, lake.',
-                        dueDate: '2015-01-31'
-                    }
-                ]
-            }
-        ],
-        afterListAdd: function(lobilist, list){
+        lists: [{
+            title: 'TODO',
+            defaultStyle: 'lobilist-info',
+            items: [{
+                title: 'Floor cool cinders',
+                description: 'Thunder fulfilled travellers folly, wading, lake.',
+                dueDate: '2015-01-31'
+            }]
+        }],
+        afterListAdd: function(lobilist, list) {
             var $dueDateInput = list.$el.find('form [name=dueDate]');
             $dueDateInput.datepicker();
         }
     });
     // Event handling
-    (function () {
+    (function() {
         var list;
 
-        $('#todo-lists-initialize-btn').click(function () {
+        $('#todo-lists-initialize-btn').click(function() {
             list = $('#todo-lists-demo-events')
                 .lobiList({
-                    init: function () {
+                    init: function() {
                         Lobibox.notify('default', {
                             msg: 'init'
                         });
                     },
-                    beforeDestroy: function () {
+                    beforeDestroy: function() {
                         Lobibox.notify('default', {
                             msg: 'beforeDestroy'
                         });
                     },
-                    afterDestroy: function () {
+                    afterDestroy: function() {
                         Lobibox.notify('default', {
                             msg: 'afterDestroy'
                         });
                     },
-                    beforeListAdd: function () {
+                    beforeListAdd: function() {
                         Lobibox.notify('default', {
                             msg: 'beforeListAdd'
                         });
                     },
-                    afterListAdd: function () {
+                    afterListAdd: function() {
                         Lobibox.notify('default', {
                             msg: 'afterListAdd'
                         });
                     },
-                    beforeListRemove: function () {
+                    beforeListRemove: function() {
                         Lobibox.notify('default', {
                             msg: 'beforeListRemove'
                         });
                     },
-                    afterListRemove: function () {
+                    afterListRemove: function() {
                         Lobibox.notify('default', {
                             msg: 'afterListRemove'
                         });
                     },
-                    beforeItemAdd: function () {
+                    beforeItemAdd: function() {
                         Lobibox.notify('default', {
                             msg: 'beforeItemAdd'
                         });
                     },
-                    afterItemAdd: function () {
-                        console.log(arguments);
+                    afterItemAdd: function() {
+                        // console.log(arguments);
                         Lobibox.notify('default', {
                             msg: 'afterItemAdd'
                         });
                     },
-                    beforeItemUpdate: function () {
+                    beforeItemUpdate: function() {
                         Lobibox.notify('default', {
                             msg: 'beforeItemUpdate'
                         });
                     },
-                    afterItemUpdate: function () {
-                        console.log(arguments);
+                    afterItemUpdate: function() {
+                        // console.log(arguments);
                         Lobibox.notify('default', {
                             msg: 'afterItemUpdate'
                         });
                     },
-                    beforeItemDelete: function () {
+                    beforeItemDelete: function() {
                         Lobibox.notify('default', {
                             msg: 'beforeItemDelete'
                         });
                     },
-                    afterItemDelete: function () {
+                    afterItemDelete: function() {
                         Lobibox.notify('default', {
                             msg: 'afterItemDelete'
                         });
                     },
-                    beforeListDrop: function () {
+                    beforeListDrop: function() {
                         Lobibox.notify('default', {
                             msg: 'beforeListDrop'
                         });
                     },
-                    afterListReorder: function () {
+                    afterListReorder: function() {
                         Lobibox.notify('default', {
                             msg: 'afterListReorder'
                         });
                     },
-                    beforeItemDrop: function () {
+                    beforeItemDrop: function() {
                         Lobibox.notify('default', {
                             msg: 'beforeItemDrop'
                         });
                     },
-                    afterItemReorder: function () {
+                    afterItemReorder: function() {
                         Lobibox.notify('default', {
                             msg: 'afterItemReorder'
                         });
                     },
-                    afterMarkAsDone: function () {
+                    afterMarkAsDone: function() {
                         Lobibox.notify('default', {
                             msg: 'afterMarkAsDone'
                         });
                     },
-                    afterMarkAsUndone: function () {
+                    afterMarkAsUndone: function() {
                         Lobibox.notify('default', {
                             msg: 'afterMarkAsUndone'
                         });
                     },
-                    styleChange: function(list, oldStyle, newStyle){
-                        console.log(arguments);
+                    styleChange: function(list, oldStyle, newStyle) {
+                        // console.log(arguments);
                         Lobibox.notify('default', {
-                            msg: 'styleChange: Old style - "'+oldStyle+'". New style - "'+ newStyle +'"'
+                            msg: 'styleChange: Old style - "' + oldStyle + '". New style - "' + newStyle + '"'
                         });
                     },
-                    titleChange: function(list, oldTitle, newTitle){
-                        console.log(arguments);
+                    titleChange: function(list, oldTitle, newTitle) {
+                        // console.log(arguments);
                         Lobibox.notify('default', {
-                            msg: 'titleChange: Old title - "'+oldTitle+'". New title - "'+ newTitle + '"'
+                            msg: 'titleChange: Old title - "' + oldTitle + '". New title - "' + newTitle + '"'
                         });
                     },
-                    lists: [
-                        {
-                            title: 'TODO',
-                            defaultStyle: 'lobilist-info',
-                            items: [
-                                {
-                                    title: 'Floor cool cinders',
-                                    description: 'Thunder fulfilled travellers folly, wading, lake.',
-                                    dueDate: '2015-01-31'
-                                },
-                                {
-                                    title: 'Periods pride',
-                                    description: 'Accepted was mollis',
-                                    done: true
-                                },
-                                {
-                                    title: 'Flags better burns pigeon',
-                                    description: 'Rowed cloven frolic thereby, vivamus pining gown intruding strangers prank ' +
+                    lists: [{
+                        title: 'TODO',
+                        defaultStyle: 'lobilist-info',
+                        items: [{
+                                title: 'Floor cool cinders',
+                                description: 'Thunder fulfilled travellers folly, wading, lake.',
+                                dueDate: '2015-01-31'
+                            },
+                            {
+                                title: 'Periods pride',
+                                description: 'Accepted was mollis',
+                                done: true
+                            },
+                            {
+                                title: 'Flags better burns pigeon',
+                                description: 'Rowed cloven frolic thereby, vivamus pining gown intruding strangers prank ' +
                                     'treacherously darkling.'
-                                },
-                                {
-                                    title: 'Accepted was mollis',
-                                    description: 'Rowed cloven frolic thereby, vivamus pining gown intruding strangers prank ' +
+                            },
+                            {
+                                title: 'Accepted was mollis',
+                                description: 'Rowed cloven frolic thereby, vivamus pining gown intruding strangers prank ' +
                                     'treacherously darkling.',
-                                    dueDate: '2015-02-02'
-                                }
-                            ]
-                        }
-                    ]
+                                dueDate: '2015-02-02'
+                            }
+                        ]
+                    }]
                 })
                 .data('lobiList');
         });
 
-        $('#todo-lists-destroy-btn').click(function () {
+        $('#todo-lists-destroy-btn').click(function() {
             list.destroy();
         });
     })();
     // Custom controls
     $('#todo-lists-demo-controls').lobiList({
-        lists: [
-            {
+        lists: [{
                 title: 'TODO',
                 defaultStyle: 'lobilist-info',
                 controls: ['edit', 'styleChange'],
-                items: [
-                    {
-                        title: 'Floor cool cinders',
-                        description: 'Thunder fulfilled travellers folly, wading, lake.',
-                        dueDate: '2015-01-31'
-                    }
-                ]
+                items: [{
+                    title: 'Floor cool cinders',
+                    description: 'Thunder fulfilled travellers folly, wading, lake.',
+                    dueDate: '2015-01-31'
+                }]
             },
             {
                 title: 'Disabled custom checkboxes',
                 defaultStyle: 'lobilist-danger',
                 controls: ['edit', 'add', 'remove'],
                 useLobicheck: false,
-                items: [
-                    {
-                        title: 'Periods pride',
-                        description: 'Accepted was mollis',
-                        done: true
-                    }
-                ]
+                items: [{
+                    title: 'Periods pride',
+                    description: 'Accepted was mollis',
+                    done: true
+                }]
             },
             {
                 title: 'Controls disabled',
                 controls: false,
-                items: [
-                    {
-                        title: 'Composed trays',
-                        description: 'Hoary rattle exulting suspendisse elit paradises craft wistful. ' +
+                items: [{
+                    title: 'Composed trays',
+                    description: 'Hoary rattle exulting suspendisse elit paradises craft wistful. ' +
                         'Bayonets allures prefer traits wrongs flushed. Tent wily matched bold polite slab coinage ' +
                         'celerities gales beams.'
-                    }
-                ]
+                }]
             },
             {
                 title: 'Disabled todo edit/remove',
                 enableTodoRemove: false,
                 enableTodoEdit: false,
-                items: [
-                    {
-                        title: 'Composed trays',
-                        description: 'Hoary rattle exulting suspendisse elit paradises craft wistful. ' +
+                items: [{
+                    title: 'Composed trays',
+                    description: 'Hoary rattle exulting suspendisse elit paradises craft wistful. ' +
                         'Bayonets allures prefer traits wrongs flushed. Tent wily matched bold polite slab coinage ' +
                         'celerities gales beams.'
-                    }
-                ]
+                }]
             }
         ]
     });
     // Disabled drag & drop
     $('#todo-lists-demo-sorting').lobiList({
         sortable: false,
-        lists: [
-            {
+        lists: [{
                 title: 'TODO',
                 defaultStyle: 'lobilist-info',
                 controls: ['edit', 'styleChange'],
-                items: [
-                    {
-                        title: 'Floor cool cinders',
-                        description: 'Thunder fulfilled travellers folly, wading, lake.',
-                        dueDate: '2015-01-31'
-                    }
-                ]
+                items: [{
+                    title: 'Floor cool cinders',
+                    description: 'Thunder fulfilled travellers folly, wading, lake.',
+                    dueDate: '2015-01-31'
+                }]
             },
             {
                 title: 'Controls disabled',
                 controls: false,
-                items: [
-                    {
-                        title: 'Composed trays',
-                        description: 'Hoary rattle exulting suspendisse elit paradises craft wistful. Bayonets allures prefer traits wrongs flushed. Tent wily matched bold polite slab coinage celerities gales beams.'
-                    }
-                ]
+                items: [{
+                    title: 'Composed trays',
+                    description: 'Hoary rattle exulting suspendisse elit paradises craft wistful. Bayonets allures prefer traits wrongs flushed. Tent wily matched bold polite slab coinage celerities gales beams.'
+                }]
             }
         ]
     });
@@ -321,8 +297,8 @@ $(function () {
             delete: 'demo/example1/delete.php',
             update: 'demo/example1/update.php'
         },
-        afterItemAdd: function(){
-            console.log(arguments);
+        afterItemAdd: function() {
+            // console.log(arguments);
         }
     });
 });

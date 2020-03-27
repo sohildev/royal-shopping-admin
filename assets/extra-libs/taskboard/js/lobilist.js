@@ -246,7 +246,7 @@ $(function() {
             me.$title.html($input.val()).removeClass('hide').removeAttr('data-old-title');
             $input.remove();
             me.$header.removeClass('title-editing');
-            console.log(oldTitle, $input.val());
+            // console.log(oldTitle, $input.val());
             me._triggerEvent('titleChange', [me, oldTitle, $input.val()]);
             return me;
         },

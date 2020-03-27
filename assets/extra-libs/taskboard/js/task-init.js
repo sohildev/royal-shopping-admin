@@ -140,7 +140,7 @@ $(function() {
                             });
                         },
                         afterItemAdd: function() {
-                            console.log(arguments);
+                            // console.log(arguments);
                             Lobibox.notify('default', {
                                 msg: 'afterItemAdd'
                             });
@@ -151,7 +151,7 @@ $(function() {
                             });
                         },
                         afterItemUpdate: function() {
-                            console.log(arguments);
+                            // console.log(arguments);
                             Lobibox.notify('default', {
                                 msg: 'afterItemUpdate'
                             });
@@ -197,13 +197,13 @@ $(function() {
                             });
                         },
                         styleChange: function(list, oldStyle, newStyle) {
-                            console.log(arguments);
+                            // console.log(arguments);
                             Lobibox.notify('default', {
                                 msg: 'styleChange: Old style - "' + oldStyle + '". New style - "' + newStyle + '"'
                             });
                         },
                         titleChange: function(list, oldTitle, newTitle) {
-                            console.log(arguments);
+                            // console.log(arguments);
                             Lobibox.notify('default', {
                                 msg: 'titleChange: Old title - "' + oldTitle + '". New title - "' + newTitle + '"'
                             });
@@ -320,7 +320,7 @@ $(function() {
                 update: '../example1/update.php'
             },
             afterItemAdd: function() {
-                console.log(arguments);
+                // console.log(arguments);
             }
         });
 
